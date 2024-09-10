@@ -1,8 +1,8 @@
 defmodule SteamApiClient do
   @api_url "http://api.steampowered.com"
-  @api_key "0A1FC04FF8AD927601C6F8B8EB9FE216"  # Substitua pela sua chave da API
+  @api_key "0A1FC04FF8AD927601C6F8B8EB9FE216"
 
-  # Função para obter o resumo do jogador
+  # obtendo o resumo do jogador
   def get_player_summaries(steam_id) do
     url = "#{@api_url}/ISteamUser/GetPlayerSummaries/v0002/?key=#{@api_key}&steamids=#{steam_id}&format=json"
 
@@ -18,7 +18,7 @@ defmodule SteamApiClient do
     end
   end
 
-  # Função para obter a lista de jogos de um usuário
+  # lista de jogos de um usuário
   def get_owned_games(steam_id) do
     url = "#{@api_url}/IPlayerService/GetOwnedGames/v0001/?key=#{@api_key}&steamid=#{steam_id}&format=json&include_appinfo=1"
 
