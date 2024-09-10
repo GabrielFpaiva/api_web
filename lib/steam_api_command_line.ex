@@ -1,7 +1,17 @@
 defmodule SteamApiCommandLine do
-  def main(_args) do
+  def main(args) do
     IO.puts("Iniciando o programa...")
-    display_menu()
+
+    case args do
+      [steam_id] ->
+
+        IO.puts("ID Steam fornecido: #{steam_id}")
+        display_account_menu(%{"id" => steam_id, "name" => "Usuário Customizado"})
+
+      _ ->
+        
+        display_menu()
+    end
   end
 
   defp display_menu do
